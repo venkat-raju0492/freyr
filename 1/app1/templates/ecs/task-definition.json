@@ -1,6 +1,6 @@
 [
     {
-      "name": "${project}-${env}",
+      "name": "${project}",
       "image": "${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repo}:${image_tag}",
       "memory": ${application_memory},
       "cpu": ${application_cpu},
