@@ -1,5 +1,3 @@
-project                = "app1"
-env                    = "dev"
 application_memory     = 512
 application_cpu        = 256
 ecs_container_port     = 8080
