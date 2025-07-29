@@ -116,3 +116,29 @@ resource "aws_security_group" "asg-sg" {
     Name = "${var.project}-asg-sg-${var.env}"
   }))
 }
+
+
+##### Setup cloudwatch log group role ARN for API Gateway
+
+resource "aws_iam_role" "apigateway_cloudwatch" {
+  name = "APIGatewayCloudWatchLogsRole"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17",
+    Statement = [
+      {
+        Effect = "Allow",
+        Principal = {
+          Service = "apigateway.amazonaws.com"
+        },
+        Action = "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "apigateway_logs_policy" {
+  role       = aws_iam_role.apigateway_cloudwatch.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+}
+

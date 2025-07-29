@@ -71,4 +71,10 @@ resource "aws_api_gateway_method_settings" "api_settings" {
     throttling_burst_limit = var.api_throttling_burst_limit
     throttling_rate_limit  = var.api_throttling_rate_limit
   }
+
+  depends_on = [aws_api_gateway_account.account]
+}
+
+resource "aws_api_gateway_account" "account" {
+  cloudwatch_role_arn = var.api_cw_role_arn
 }

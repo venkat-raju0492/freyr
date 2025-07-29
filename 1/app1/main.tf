@@ -112,6 +112,7 @@ module "Private-API" {
   api_throttling_burst_limit   = var.api_throttling_burst_limit
   api_throttling_rate_limit    = var.api_throttling_rate_limit
   region                       = var.region
+  api_cw_role_arn              = module.security.api_cw_role_arn
 }
 
 module "ecs" {

@@ -9,3 +9,8 @@ output "ecs-task-role-arn" {
 output "asg-sg-api-id" {
   value = aws_security_group.asg-sg.id
 }
+
+output "api_cw_role_arn" {
+  value = aws_iam_role.apigateway_cloudwatch.arn
+  
+}

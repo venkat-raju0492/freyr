@@ -38,3 +38,7 @@ variable "api_throttling_burst_limit" {
 variable "region" {
   description = "value of the region"
 }
+
+variable "api_cw_role_arn" {
+  description = "api cw role arn"
+}
