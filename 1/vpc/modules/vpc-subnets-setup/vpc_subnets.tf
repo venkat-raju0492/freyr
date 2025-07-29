@@ -45,7 +45,6 @@ resource "aws_subnet" "private_subnet" {
 }
 
 resource "aws_eip" "nat" {
-    vpc = true
 	
     tags = merge(var.common_tags, {
     "Name" = "${var.project}-${var.environment}-nat-ip"

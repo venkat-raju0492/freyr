@@ -23,6 +23,12 @@ below are the steps to execute terraform script
 
 terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfvars" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
 
+terraform plan -var-file=vpc1.tfvars -var project=frey -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+Validate all the plan and the 22 resources to be created
+
+terraform apply --input=false .terraform/latest-plan
+
 
 2. TO PROVISION VPC 2 in us-west-2 region
 3. TO PROVISION VPC 3 in us-west-2 region
