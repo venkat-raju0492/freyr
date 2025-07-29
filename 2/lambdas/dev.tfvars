@@ -1,0 +1,10 @@
+lambda_s3_bucket = "freyr-terraform-state-files-bucket"
+lambda_s3_key1   = "freyr/2/lambdas/lambda1.zip" 
+lambda_s3_key2   = "freyr/2/lambdas/lambda2.zip"
+lambda_s3_key3   = "freyr/2/lambdas/lambda3.zip"
+lambda_handler1  = "lambda1.lambda_handler"
+lambda_handler2  = "lambda2.lambda_handler"
+lambda_handler3  = "lambda3.lambda_handler"
+lambda_runtime   = "python3.11"
+lambda_timeout   = 900
+lambda_size      = 128

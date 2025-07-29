@@ -10,7 +10,7 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 locals {
-  cloudwatch_logs_group               = "/lambda/${var.project}/${var.env}"
+  cloudwatch_logs_group               = "/aws/lambda/${var.project}/${var.env}"
 
   # Common tags to be assigned to all resources
   common_tags = {

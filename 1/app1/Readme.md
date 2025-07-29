@@ -23,6 +23,6 @@ terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -back
 
 terraform plan -var-file=dev.tfvars -var project=freyr-aap1 -var region=us-west-2 -var image_tag=latest -var env=dev -out .terraform/latest-plan
 
-Validate all the 23 resource to be created
+Validate all the resource to be created
 
 terraform apply --input=false .terraform/latest-plan
