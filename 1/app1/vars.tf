@@ -54,7 +54,6 @@ variable "vpc_endpoint_allowed_cidrs" {
 
 variable "ecs_allowed_cidr" {
   description = "CIDR allowed to access ECS resources."
-  type        = string
 }
 
 variable "private_subnet_ids" {

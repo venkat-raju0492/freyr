@@ -22,9 +22,9 @@ resource "aws_security_group" "vpc_endpoint_sg" {
     cidr_blocks     = ["0.0.0.0/0"]
   }
 
-  tags = merge(var.common_tags, map(
-    "Name", "${var.project}-vpc-endpoint-sg-${var.env}"
-  ))
+  tags = merge(var.common_tags, tomap({
+    Name = "${var.project}-vpc-endpoint-sg-${var.env}"
+  }))
 }
 
 
