@@ -21,14 +21,57 @@ below are the steps to execute terraform script
 
 1. TO PROVISION VPC 1 in us-west-2 region
 
-terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfvars" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
 
-terraform plan -var-file=vpc1.tfvars -var project=vpc-a -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+terraform plan -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
 Validate all the plan and the 22 resources to be created
 
 terraform apply --input=false .terraform/latest-plan
 
+to destroy VPC1
+
+terraform plan -destroy -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+terraform destory -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -auto-approve
+
 
 2. TO PROVISION VPC 2 in us-west-2 region
+
+remove all the .terraform file 
+
+rm -rf .terraform*
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc2.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+
+terraform plan -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+Validate all the plan and the 22 resources to be created
+
+terraform apply --input=false .terraform/latest-plan
+
+to destroy VPC1
+
+terraform plan -destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+terraform destory -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -auto-approve
+
 3. TO PROVISION VPC 3 in us-west-2 region
+
+remove all the .terraform file 
+
+rm -rf .terraform*
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc3.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+
+terraform plan -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+Validate all the plan and the 22 resources to be created
+
+terraform apply --input=false .terraform/latest-plan
+
+to destroy VPC1
+
+terraform plan -destroy -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
+
+terraform destory -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -auto-approve
