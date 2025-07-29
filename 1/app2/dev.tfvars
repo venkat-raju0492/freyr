@@ -1,5 +1,5 @@
 vpc_id                     = "vpc-0d8f5889a9ffd87a5"
-vpc_endpoint_allowed_cidrs = ["10.0.64.0/20"]
+vpc_endpoint_allowed_cidrs = ["10.0.32.0/20"]
 lambda_s3_bucket           = "freyr-terraform-state-files-bucket"
 lambda_s3_key              = "app2/lambda-code/lambda_function.zip"
 lambda_handler             = "lambda_function.lambda_handler"
