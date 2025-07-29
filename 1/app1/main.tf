@@ -27,7 +27,7 @@ locals {
 }
 
 data "template_file" "ecs_task_api" {
-  template = file(".templates/ecs/task-definition.json")
+  template = file("./templates/ecs/task-definition.json")
 
   vars = {
      project                = var.project
@@ -44,7 +44,7 @@ data "template_file" "ecs_task_api" {
 }
 
 data "template_file" "private_api_swagger" {
-  template = file(".templates/apigateway/private-api.json")
+  template = file("./templates/apigateway/private-api.json")
   
   vars = {
     project               = var.project
@@ -105,7 +105,7 @@ module "Private-API" {
   source                       = "./modules/private-api-gateway"
   project                      = "${var.project}-ngs"
   env                          = var.env
-  lb_target_arn                = module.network-lb-api.lb_arn
+  lb_target_arn                = module.network-lb.lb_arn
   api_swagger_config           = data.template_file.private_api_swagger.rendered
   vpc_endpoint_id              = module.vpc-endpoint.vpc_endpoint_id
   common_tags                  = local.common_tags
@@ -131,8 +131,8 @@ module "ecs" {
   ecs_service_desired_count        = var.ecs_service_desired_count
   ecs_rendered_task_definition     = data.template_file.ecs_task_api.rendered
   common_tags                      = local.common_tags
-  asg_security_group               = module.Security.asg-sg-api-id
-  ecs_task_role_arn                = module.Security.ecs-task-role-arn
+  asg_security_group               = module.security.asg-sg-api-id
+  ecs_task_role_arn                = module.security.ecs-task-role-arn
   alb_target_group_arn             = module.network-lb.alb_target_group_arn
   ecs_container_port               = var.ecs_container_port
   create_ecs_memory_scaling_policy = var.create_ecs_memory_scaling_policy
