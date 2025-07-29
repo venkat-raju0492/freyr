@@ -24,7 +24,7 @@ locals {
 }
 
 data "template_file" "private_api_swagger" {
-  template = file("./templates/apigateway/private-api.json")
+  template = file("./templates/private-api.json")
   
   vars = {
     project                       = var.project
