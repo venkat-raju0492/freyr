@@ -1,4 +1,11 @@
 output "vpc_endpoint_sg_id" {
   value = aws_security_group.vpc_endpoint_sg.id
-  
+}
+
+output "ecs-task-role-arn" {
+  value = aws_iam_role.ecs-task-role.arn
+}
+
+output "asg-sg-api-id" {
+  value = aws_security_group.asg_sg_api.id
 }

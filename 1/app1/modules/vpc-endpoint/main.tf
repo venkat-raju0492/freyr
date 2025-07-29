@@ -8,7 +8,7 @@ resource "aws_vpc_endpoint" "vpc_endpoint" {
   subnet_ids          = var.private_subnet_ids
   private_dns_enabled = false
 
-  tags = merge(var.common_tags, map(
-    "Name", "${var.project}-vpc-endpoint-${var.env}"
-  ))
+  tags = merge(var.common_tags, tomap({
+    Name = "${var.project}-vpc-endpoint-${var.env}"
+  }))
 }
