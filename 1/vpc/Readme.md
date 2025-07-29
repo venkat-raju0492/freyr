@@ -20,5 +20,9 @@ Need to trigger this script thrice with three different state files for 3 VPC, t
 below are the steps to execute terraform script 
 
 1. TO PROVISION VPC 1 in us-west-2 region
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfvars" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+
+
 2. TO PROVISION VPC 2 in us-west-2 region
 3. TO PROVISION VPC 3 in us-west-2 region
