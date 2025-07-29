@@ -4,7 +4,7 @@ ecs_container_port     = 8080
 vpc_id                = "vpc-07dd7c61001d399f5"
 vpc_endpoint_allowed_cidrs = ["10.0.64.0/20"]
 ecs_allowed_cidr      = ["10.0.0.0/20"]
-private_subnet_ids     = ["subnet-04c29a1ed7b2149d3","subnet-0a6608d5ff74c32f2","subnet-006766cf210fe6b8e"]
+private_subnet_ids     = ["subnet-03c5f33df23eff7f5","subnet-0ab2e483a13826dc1","subnet-003c746b85d21220b"]
 
 api_throttling_burst_limit                 = 5000
 
