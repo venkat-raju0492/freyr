@@ -89,7 +89,7 @@ module "lambda2" {
   env_vars = {
     env                         = var.env
     lambda_function_name        = "${var.project}2-${var.env}"
-    LAMBDA_2_ARN                = module.lambda3.lambda_function_arn
+    LAMBDA_3_ARN                = module.lambda3.lambda_function_arn
   }
 
   depends_on = [aws_cloudwatch_log_group.lambda2_log_group]
