@@ -1,3 +1,6 @@
+Prerequisites
+all the 3 apps with python code to be zipped and uploaded to s3
+
 Terraform script to create 3 lambdas
 
 Lambda 1 triggers with on demand with some payload
