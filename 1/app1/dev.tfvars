@@ -2,7 +2,7 @@ application_memory     = 512
 application_cpu        = 256
 ecs_container_port     = 8080
 vpc_id                = "vpc-07dd7c61001d399f5"
-vpc_endpoint_allowed_cidrs = []"10.0.64.0/20"]
+vpc_endpoint_allowed_cidrs = ["10.0.64.0/20"]
 ecs_allowed_cidr      = ["10.0.0.0/20"]
 private_subnet_ids     = ["subnet-04c29a1ed7b2149d3","subnet-0a6608d5ff74c32f2","subnet-006766cf210fe6b8e"]
 
