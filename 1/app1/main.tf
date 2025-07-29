@@ -103,7 +103,7 @@ module "network-lb" {
 
 module "Private-API" {
   source                       = "./modules/private-api-gateway"
-  project                      = "${var.project}-ngs"
+  project                      = "${var.project}"
   env                          = var.env
   lb_target_arn                = module.network-lb.lb_arn
   api_swagger_config           = data.template_file.private_api_swagger.rendered

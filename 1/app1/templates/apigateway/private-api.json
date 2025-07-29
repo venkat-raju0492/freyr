@@ -8,6 +8,22 @@
   "host": "${project}-${env}",
   "basePath": "/${env}",
   "schemes": [ "https" ],
+  "tags" : [ {
+        "name" : "Project",
+        "x-amazon-apigateway-tag-value" : "${project}"
+      }, {
+        "name" : "Environment",
+        "x-amazon-apigateway-tag-value" : "${env}"
+      }, {
+        "name" : "CreatedBy",
+        "x-amazon-apigateway-tag-value" : "Terraform"
+      }, {
+        "name" : "CostCategory",
+        "x-amazon-apigateway-tag-value" : "freyr"
+      }, {
+        "name" : "Name",
+        "x-amazon-apigateway-tag-value" : "${project}-${env}"
+      } ],
   "paths": {
     "/{proxy+}": {
       "x-amazon-apigateway-any-method": {
