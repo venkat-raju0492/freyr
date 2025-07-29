@@ -1,0 +1,1 @@
+This module is to create vpc endpoint for API Gateway to enable private invocations of API
