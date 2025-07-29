@@ -11,7 +11,7 @@ locals {
     Project = var.project
     Environment = var.environment
     CreatedBy = "Terraform"
-    CostCategory = var.cost_cateory
+    CostCategory = var.cost_category
   })
 }
 

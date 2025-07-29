@@ -35,3 +35,6 @@ variable "private_subnet_count" {
     description = "Number of Private subnets needed"
 }
 
+variable "cost_category" {
+  description = "cost category to track cost"
+}
