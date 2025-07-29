@@ -50,7 +50,7 @@ Validate all the plan and the 22 resources to be created
 
 terraform apply --input=false .terraform/latest-plan
 
-to destroy VPC1
+to destroy VPC2
 
 terraform plan -destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
@@ -70,7 +70,7 @@ Validate all the plan and the 22 resources to be created
 
 terraform apply --input=false .terraform/latest-plan
 
-to destroy VPC1
+to destroy VPC3
 
 terraform plan -destroy -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
