@@ -76,7 +76,7 @@ variable "api_throttling_burst_limit" {
 }  
 
 variable "api_throttling_rate_limit" {
-  description = "Rate limit for API Gateway throttling"s
+  description = "Rate limit for API Gateway throttling"
   type        = number
 }
 
