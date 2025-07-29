@@ -1,0 +1,34 @@
+[
+    {
+      "name": "${project}-${env}",
+      "image": "${aws_account_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repo}:${image_tag}",
+      "memory": ${application_memory},
+      "cpu": ${application_cpu},
+      "networkMode": "awsvpc",
+      "portMappings": [
+        {
+          "containerPort" : ${ecs_container_port},
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "aws_region",
+          "value": "${region}"
+        },
+        {
+          "name": "environment",
+          "value": "${env}"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "${cloudwatch_logs_group}",
+          "awslogs-region": "${region}",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+    
+]
