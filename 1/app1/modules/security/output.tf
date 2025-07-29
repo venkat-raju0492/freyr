@@ -7,5 +7,5 @@ output "ecs-task-role-arn" {
 }
 
 output "asg-sg-api-id" {
-  value = aws_security_group.asg_sg_api.id
+  value = aws_security_group.asg_sg.id
 }
