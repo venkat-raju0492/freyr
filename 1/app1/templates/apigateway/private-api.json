@@ -59,7 +59,7 @@
           "type": "http_proxy",
           "connectionId": "${vpc_link_id}",
           "httpMethod": "ANY",
-          "uri": "https://${lb_endpoint}/{proxy}",
+          "uri": "http://${lb_endpoint}/{proxy}",
           "responses": {
             "default": {
               "statusCode": "200"
