@@ -84,7 +84,7 @@ module "vpc-endpoint" {
   env                        = var.env
 }
 
-module "network-lb-api" {
+module "network-lb" {
   source                      = "./modules/nlb"
   subnet_ids                  = var.private_subnet_ids
   vpc_id                      = var.vpc_id
@@ -133,7 +133,7 @@ module "ecs" {
   common_tags                      = local.common_tags
   asg_security_group               = module.Security.asg-sg-api-id
   ecs_task_role_arn                = module.Security.ecs-task-role-arn
-  alb_target_group_arn             = 
+  alb_target_group_arn             = module.network-lb.alb_target_group_arn
   ecs_container_port               = var.ecs_container_port
   create_ecs_memory_scaling_policy = var.create_ecs_memory_scaling_policy
   capacity_provider_strategy       = var.capacity_provider_strategy

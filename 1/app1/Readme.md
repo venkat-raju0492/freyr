@@ -18,4 +18,4 @@ Make Sure docker image is ready to be deployed
 
 To provision the infra execute the below terraform commands
 
-
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/app1/app1.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
