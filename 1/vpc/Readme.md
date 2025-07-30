@@ -33,7 +33,7 @@ to destroy VPC1
 
 terraform plan -destroy -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
-terraform destory -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -auto-approve
+terraform destroy -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -auto-approve
 
 
 2. TO PROVISION VPC 2 in us-west-2 region
@@ -54,7 +54,7 @@ to destroy VPC2
 
 terraform plan -destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
-terraform destory -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -auto-approve
+terraform destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -auto-approve
 
 3. TO PROVISION VPC 3 in us-west-2 region
 
