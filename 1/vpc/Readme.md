@@ -74,4 +74,4 @@ to destroy VPC3
 
 terraform plan -destroy -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
-terraform destory -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -auto-approve
+terraform destroy -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -auto-approve
