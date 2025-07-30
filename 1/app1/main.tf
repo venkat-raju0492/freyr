@@ -142,4 +142,4 @@ module "ecs" {
   create_ecs_cluster_capacity_providers = true
   enable_execute_command = true
   log_retention_period = var.log_retention_period
-}"
+}
