@@ -57,3 +57,14 @@ resource "aws_lb_listener" "alb-listener-http" {
     target_group_arn = aws_alb_target_group.alb-tg.arn
   }
 }
+
+resource "aws_lb_listener" "alb-listener-https" {
+  load_balancer_arn = aws_alb.alb.arn
+  port              = "443"
+  protocol          = "TCP"
+
+  default_action {
+    type = "forward"
+    target_group_arn = aws_alb_target_group.alb-tg.arn
+  }
+}
