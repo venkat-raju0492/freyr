@@ -1,4 +1,4 @@
-vpc_id                     = "vpc-0d8f5889a9ffd87a5"
+vpc_id                     = "vpc-0aa78f9f27a1aace4"
 vpc_endpoint_allowed_cidrs = ["10.0.64.0/20"]
 lambda_s3_bucket           = "freyr-terraform-state-files-bucket"
 lambda_s3_key              = "app2/lambda-code/lambda_function.zip"
@@ -6,6 +6,6 @@ lambda_handler             = "lambda_function.lambda_handler"
 lambda_runtime             = "python3.11"
 lambda_size                = "512"
 lambda_timeout             = 900
-private_subnet_ids         = ["subnet-055832f84c760046e","subnet-0f1ed276af995f73b","subnet-0421bfa66772e594a"]
+private_subnets_id = ["subnet-0c5d78ae6e080c753","subnet-0180a6218fc7217be","subnet-084b0520e66ffa5e4",]
 api_throttling_burst_limit = 5000
 api_throttling_rate_limit  = 10000 

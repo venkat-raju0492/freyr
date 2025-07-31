@@ -1,10 +1,10 @@
 application_memory     = 512
 application_cpu        = 256
 ecs_container_port     = 8080
-vpc_id                = "vpc-07dd7c61001d399f5"
+vpc_id                = "vpc-0b106afce00afa862"
 vpc_endpoint_allowed_cidrs = ["10.0.64.0/20"]
 ecs_allowed_cidr      = ["10.0.0.0/20"]
-private_subnet_ids     = ["subnet-03c5f33df23eff7f5","subnet-0ab2e483a13826dc1","subnet-003c746b85d21220b"]
+private_subnet_ids     =  ["subnet-0964a9ea4eeb3e77d","subnet-0ba0f387d18ca0e10","subnet-08b0a47ee47d88a61",]
 
 api_throttling_burst_limit                 = 5000
 
