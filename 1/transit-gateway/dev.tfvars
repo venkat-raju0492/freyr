@@ -1,13 +1,13 @@
-vpc1_id                  = "vpc-07dd7c61001d399f5"
-vpc1_subnet_ids          = ["subnet-03c5f33df23eff7f5","subnet-0ab2e483a13826dc1","subnet-003c746b85d21220b"]
-vpc2_id                  = "vpc-0d8f5889a9ffd87a5"
-vpc2_subnet_ids          = ["subnet-055832f84c760046e","subnet-0f1ed276af995f73b","subnet-0421bfa66772e594a"]
-vpc3_id                  = "vpc-0d13e73c179d9ce1c"
-vpc3_subnet_ids          = ["subnet-06903e17135ef9a9c","subnet-0eb51d0524601c65b","subnet-0bde873f5f8c12466"]
+vpc1_id                  = "vpc-0b106afce00afa862"
+vpc1_subnet_ids          = ["subnet-0964a9ea4eeb3e77d","subnet-0ba0f387d18ca0e10","subnet-08b0a47ee47d88a61",]
+vpc2_id                  = "vpc-0aa78f9f27a1aace4"
+vpc2_subnet_ids          = ["subnet-0c5d78ae6e080c753","subnet-0180a6218fc7217be","subnet-084b0520e66ffa5e4",]
+vpc3_id                  = "vpc-0bbaf27507d0ab7bf"
+vpc3_subnet_ids          = ["subnet-0da79a1cfc921b247","subnet-01d3ac6b48f4e9531","subnet-095a4d7c2dcee5c4a"]
 
-vpc1_route_table_id     = "rtb-05fec624c7e04c8ec"
-vpc2_route_table_id     = "rtb-02493f5211e0e3c2e"
-vpc3_route_table_id     = "rtb-017129c9b0bc08a75"
+vpc1_route_table_id     = "rtb-0d4f53eac1f618ad3"
+vpc2_route_table_id     = "rtb-0417f40066f728d06"
+vpc3_route_table_id     = "rtb-0d15c69a7ee302dd3"
 
 vpc1_cidr_block         = "10.0.0.0/20"
 vpc2_cidr_block         = "10.0.32.0/20"
