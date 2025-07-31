@@ -6,6 +6,6 @@ lambda_handler             = "lambda_function.lambda_handler"
 lambda_runtime             = "python3.11"
 lambda_size                = "512"
 lambda_timeout             = 900
-private_subnets_id = ["subnet-0c5d78ae6e080c753","subnet-0180a6218fc7217be","subnet-084b0520e66ffa5e4",]
+private_subnet_ids = ["subnet-0c5d78ae6e080c753","subnet-0180a6218fc7217be","subnet-084b0520e66ffa5e4",]
 api_throttling_burst_limit = 5000
 api_throttling_rate_limit  = 10000 
