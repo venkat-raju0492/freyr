@@ -1,5 +1,10 @@
 Terraform script to create transit gateway with routing tabled for cross network connectivity
 
+Prerequisites
+
+Update the VPC IDs
+Subnet IDs and route table IDs
+
 To provision the infra execute the below terraform commands
 
 terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/app/app.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
@@ -11,3 +16,8 @@ Validate all the 23 resource to be created
 
 terraform apply --input=false .terraform/latest-plan
 
+To Destroy
+
+terraform plan -destroy -var-file=dev.tfvars -var project=freyr -var region=us-west-2 -var env=dev -out .terraform/latest-plan
+
+terraform destroy -var-file=dev.tfvars -var project=freyr -var region=us-west-2 -var env=dev -auto-approve

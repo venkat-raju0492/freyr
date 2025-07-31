@@ -15,6 +15,7 @@ Private API Gateway -> Exposing the API privately
 
 Prerequisites: 
 Make Sure docker image is ready to be deployed
+Update the vpc id and subnet ids
 
 To provision the infra execute the below terraform commands
 
@@ -26,3 +27,9 @@ terraform plan -var-file=dev.tfvars -var project=freyr-aap1 -var region=us-west-
 Validate all the resource to be created
 
 terraform apply --input=false .terraform/latest-plan
+
+To destroy
+
+terraform plan -destroy -var-file=dev.tfvars -var project=freyr-aap1 -var region=us-west-2 -var image_tag=latest -var env=dev -out .terraform/latest-plan
+
+terraform destroy -var-file=dev.tfvars -var project=freyr-aap1 -var region=us-west-2 -var image_tag=latest -var env=dev -auto-approve

@@ -30,6 +30,10 @@ Validate all the plan and the 22 resources to be created
 terraform apply --input=false .terraform/latest-plan
 
 to destroy VPC1
+ 
+rm -rf *
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
 
 terraform plan -destroy -var-file=vpc1.tfvars -var project=freyr-aap1 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
@@ -52,6 +56,10 @@ terraform apply --input=false .terraform/latest-plan
 
 to destroy VPC2
 
+rm -rf .terraform*
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc2.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+
 terraform plan -destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 
 terraform destroy -var-file=vpc2.tfvars -var project=freyr-aap2 -var region=us-west-2 -var environment=dev -auto-approve
@@ -71,6 +79,11 @@ Validate all the plan and the 22 resources to be created
 terraform apply --input=false .terraform/latest-plan
 
 to destroy VPC3
+
+rm -rf .terraform*
+
+terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc3.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
+
 
 terraform plan -destroy -var-file=vpc3.tfvars -var project=freyr-aap3 -var region=us-west-2 -var environment=dev -out .terraform/latest-plan
 

@@ -12,6 +12,7 @@ Private API Gateway -> Exposing the API privately
 
 Prerequisites: 
 Make Sure python code is zipped and uploaded to s3 bucket
+Update the VPC ID and subnets IDs
 
 To provision the infra execute the below terraform commands
 
@@ -23,3 +24,10 @@ terraform plan -var-file=dev.tfvars -var project=freyr-aap2-lambda -var region=u
 Validate all the resource to be created
 
 terraform apply --input=false .terraform/latest-plan
+
+
+To destroy
+
+terraform plan -destroy -var-file=dev.tfvars -var project=freyr-aap2-lambda -var region=us-west-2 -var env=dev -out .terraform/latest-plan
+
+terraform destroy -var-file=dev.tfvars -var project=freyr-aap2-lambda -var region=us-west-2 -var env=dev -auto-approve

@@ -19,3 +19,9 @@ terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -back
 terraform plan -var-file=dev.tfvars -var project=freyr-app -var region=us-west-2 -var env=dev -out .terraform/latest-plan
 
 terraform apply --input=false .terraform/latest-plan
+
+To destroy the infra
+
+terraform plan -destroy -var-file=dev.tfvars -var project=freyr-app -var region=us-west-2 -var env=dev -out .terraform/latest-plan
+
+terraform destroy -var-file=dev.tfvars -var project=freyr-app -var region=us-west-2 -var env=dev -auto-approve
