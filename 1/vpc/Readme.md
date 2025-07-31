@@ -31,7 +31,7 @@ terraform apply --input=false .terraform/latest-plan
 
 to destroy VPC1
  
-rm -rf *
+rm -rf .terraform*
 
 terraform init -backend-config="bucket=freyr-terraform-state-files-bucket" -backend-config="key=freyr/vpc/vpc1.tfstate" -backend-config="region=us-west-2" -backend=true -force-copy -get=true -input=false
 
